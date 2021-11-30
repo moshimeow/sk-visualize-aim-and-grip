@@ -10,7 +10,6 @@ using namespace sk;
 
 void disp_controller(handed_ hand, const char *name) {
   const controller_t *controller = input_controller(hand);
-  sk::log_diagf("Exists %d tracked %d tracked_pos %d tracked_rot %d", controller->exists, controller->tracked, controller->tracked_pos, controller->tracked_rot);
   if (!controller->tracked_pos || !controller->tracked_rot) {
     return;
   }
@@ -32,6 +31,7 @@ void disp_controller(handed_ hand, const char *name) {
 void update() {
   disp_controller(sk::handed_left, "left");
   disp_controller(sk::handed_right, "right");
+  draw_hand_axes();
 }
 
 int main() {

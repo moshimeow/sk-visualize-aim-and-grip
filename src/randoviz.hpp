@@ -79,17 +79,17 @@ draw_hand_axes()
 				hand_joint_t joint_ = hand->fingers[finger][joint];
 				pose_t joint_pose = {joint_.position, joint_.orientation};
 
-				draw_axis(joint_pose, 0.015f, 0.002);
+				draw_axis(joint_pose, 0.015f);
 			}
 		}
 
 		pose_t palm_pose = hand->palm;
-		draw_axis(palm_pose, 0.015f, 0.002);
+		draw_axis(palm_pose, 0.015f);
 
 		pose_t wrist_pose = hand->wrist;
 		// log_diagf("I think wrist is at %f %f %f", wrist_pose.position.x,
 		// wrist_pose.position.y, wrist_pose.position.z);
-		draw_axis(wrist_pose, 15.0f, 0.002);
+		draw_axis(wrist_pose, 0.015f);
 		vec3 wrist = wrist_pose.position;
 		vec3 middle_distal = hand->fingers[2][1].position;
 		vec3 sub = wrist - middle_distal;
